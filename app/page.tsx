@@ -1,101 +1,221 @@
-import Image from "next/image";
+import type { Metadata } from "next";
+import { Waves, Timer, Building, Plane, Zap, Eye, Anchor } from "lucide-react";
+import HeroSection from "@/components/HeroSection";
+import StatBar from "@/components/StatBar";
+import FeatureCard from "@/components/FeatureCard";
+import ComparisonTable from "@/components/ComparisonTable";
+import OriginStory from "@/components/OriginStory";
+import CTASection from "@/components/CTASection";
+import SectionReveal from "@/components/SectionReveal";
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: "Valorlox | Intelligent Flood Protection Systems",
+  description:
+    "Valorlox deploys patented pneumatic cofferdam technology that protects communities from flooding in under 16 minutes — and disappears as functional public space when the threat passes.",
+};
+
+const differentiators = [
+  {
+    icon: Timer,
+    title: "Deployed in under 16 minutes",
+    description:
+      "One operator. One air pump. No crane. No crew. The system is ready to deploy 24/7, triggered by a single decision — before a storm surge arrives.",
+  },
+  {
+    icon: Eye,
+    title: "Invisible until it's needed",
+    description:
+      "When the threat passes, the cofferdam becomes a walkable public surface bearing up to 300 lb/ft. No storage. No visual blight. No barrier looming over your waterfront.",
+  },
+  {
+    icon: Anchor,
+    title: "Permanently installed",
+    description:
+      "Unlike temporary barriers that must be trucked in, set up, and broken down after every flood event, the Valorlox system is in the ground — always.",
+  },
+];
+
+const useCases = [
+  {
+    icon: Building,
+    title: "Municipal waterfronts",
+    description:
+      "Protect downtown flood zones, marina districts, and boardwalks that cannot afford visual blight or permanent hardscape closures.",
+  },
+  {
+    icon: Plane,
+    title: "Transportation hubs",
+    description:
+      "Airport ILS equipment, rail underpasses, and coastal bridges require rapid response protection that doesn't interfere with daily operations.",
+  },
+  {
+    icon: Zap,
+    title: "Critical infrastructure",
+    description:
+      "Utility substations and DoD coastal facilities need permanent, always-ready flood protection that meets stringent performance requirements.",
+  },
+];
+
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
+      <HeroSection
+        headline="Flooding is getting worse. Your waterfront deserves protection that's always ready — and invisible until it's needed."
+        subhead="The Valorlox pneumatic cofferdam deploys in under 16 minutes without heavy equipment, then becomes walkable public space the moment the threat passes."
+        ctaText="Learn How It Works"
+        ctaHref="/technology"
+        secondaryCtaText="Partner With Us"
+        secondaryCtaHref="/partner"
+      />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      <StatBar />
+
+      {/* Problem section */}
+      <SectionReveal>
+        <section className="bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              <div>
+                <span className="text-brand-green text-sm font-semibold uppercase tracking-widest">
+                  The Problem
+                </span>
+                <h2 className="text-3xl sm:text-4xl font-extrabold text-brand-dark mt-3 mb-6 tracking-tight leading-tight">
+                  Nuisance flooding has increased 6× in 50 years. The infrastructure to fight it hasn&apos;t kept up.
+                </h2>
+                <div className="space-y-5 text-brand-slate text-base leading-relaxed">
+                  <p>
+                    In the 1950s, US coastal communities experienced roughly 2
+                    nuisance flood days per year. By 2010, that number had
+                    climbed to 12 — and it continues to rise with sea levels.
+                  </p>
+                  <p>
+                    Each flood event triggers property damage, road closures,
+                    infrastructure deterioration, and losses to local
+                    businesses and tourism. The cumulative economic toll across
+                    the US coastline reaches billions annually.
+                  </p>
+                  <p>
+                    Existing flood barrier solutions require large storage
+                    facilities, heavy equipment for deployment, and significant
+                    visual intrusion into public spaces — costs that many
+                    municipalities simply cannot absorb.
+                  </p>
+                </div>
+              </div>
+              <div className="bg-brand-cream rounded-2xl overflow-hidden aspect-[4/3] flex items-center justify-center">
+                <div className="text-center p-8">
+                  <Waves size={48} className="text-brand-water mx-auto mb-4" />
+                  <p className="text-brand-slate text-sm font-medium">
+                    Prototype photo — waterfront deployment
+                  </p>
+                  <p className="text-gray-400 text-xs mt-1">
+                    Add /public/prototype-photo-2.jpeg
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </SectionReveal>
+
+      {/* Solution overview */}
+      <SectionReveal>
+        <section className="bg-brand-cream">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div className="text-center mb-12">
+              <span className="text-brand-green text-sm font-semibold uppercase tracking-widest">
+                The Solution
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-brand-dark mt-3 tracking-tight">
+                Protection that disappears when you don&apos;t need it
+              </h2>
+              <p className="mt-4 text-brand-slate text-lg max-w-2xl mx-auto leading-relaxed">
+                The GMU Dynamic Low Visibility Pneumatic Cofferdam is
+                permanently embedded in waterfront infrastructure. When
+                flooding threatens, a single operator inflates the system —
+                creating a watertight seal in under 16 minutes.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {differentiators.map((d, i) => (
+                <FeatureCard
+                  key={i}
+                  icon={d.icon}
+                  title={d.title}
+                  description={d.description}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+      </SectionReveal>
+
+      {/* Competitive comparison */}
+      <SectionReveal>
+        <section className="bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div className="text-center mb-10">
+              <span className="text-brand-green text-sm font-semibold uppercase tracking-widest">
+                Competitive Position
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-brand-dark mt-3 tracking-tight">
+                Ranked #1 across key performance categories
+              </h2>
+              <p className="mt-4 text-brand-slate text-base max-w-xl mx-auto">
+                Independent GMU utility analysis comparing Valorlox against
+                leading temporary flood barrier solutions.
+              </p>
+            </div>
+            <ComparisonTable />
+          </div>
+        </section>
+      </SectionReveal>
+
+      {/* Use case teaser */}
+      <SectionReveal>
+        <section className="bg-brand-cream">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div className="text-center mb-12">
+              <span className="text-brand-green text-sm font-semibold uppercase tracking-widest">
+                Applications
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-brand-dark mt-3 tracking-tight">
+                Built for the places that can&apos;t afford to flood
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {useCases.map((u, i) => (
+                <FeatureCard
+                  key={i}
+                  icon={u.icon}
+                  title={u.title}
+                  description={u.description}
+                  accent
+                />
+              ))}
+            </div>
+            <div className="text-center mt-10">
+              <a
+                href="/use-cases"
+                className="inline-flex items-center gap-2 border border-brand-green text-brand-green hover:bg-brand-green hover:text-white font-semibold px-7 py-3 rounded transition-colors text-sm"
+              >
+                View all use cases →
+              </a>
+            </div>
+          </div>
+        </section>
+      </SectionReveal>
+
+      <OriginStory />
+
+      <CTASection
+        headline="Partner with Valorlox"
+        subhead="We are actively seeking municipal pilot partners, infrastructure operators, and investors who understand that climate resilience is not optional."
+        ctaText="Start a Conversation"
+        ctaHref="/partner"
+        secondaryCtaText="Learn the Technology"
+        secondaryCtaHref="/technology"
+      />
+    </>
   );
 }
