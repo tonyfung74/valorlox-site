@@ -7,7 +7,7 @@ const pillars = [
   {
     icon: Microscope,
     title: "George Mason University",
-    body: "The cofferdam originated as a patented GMU capstone engineering project under Dr. George Donohue — rigorous academic research translated into a commercial product.",
+    body: "The cofferdam originated as a patented GMU capstone engineering project under Dr. George Donohue with co-inventors Adel N. Youssef, Lucciana Hind Remy, Faris Khaled Masri, and Murat Gokturk — rigorous academic research translated into a commercial product.",
   },
   {
     icon: Award,

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Building, Plane, Zap, Waves, ChevronRight } from "lucide-react";
 import CTASection from "@/components/CTASection";
 import SectionReveal from "@/components/SectionReveal";
@@ -24,21 +25,25 @@ const cases = [
       "Compatible with existing boardwalk and dock surfaces",
       "Scalable to any linear footage",
     ],
+    image: "/prototype-photo-2.jpeg",
+    imageAlt: "Valorlox cofferdam deployed at waterfront",
   },
   {
-    icon: Plane,
-    category: "Transportation Infrastructure",
-    title: "Airports, rail corridors, and coastal bridges",
+    icon: Building,
+    category: "Residential Protection",
+    title: "Beachfront homes, apartments, and residential communities",
     problem:
-      "A coastal airport in the US Gulf region faced recurring flooding of its Instrument Landing System (ILS) equipment — a federally mandated critical navigation system. Each flood event required temporary barriers that disrupted airfield operations and required days of setup with heavy equipment.",
+      "Homeowners and residents in coastal areas face recurring flooding threats that damage property, disrupt lives, and increase insurance costs. Traditional solutions like permanent seawalls alter neighborhood character and are prohibitively expensive for individual properties or small residential blocks.",
     solution:
-      "A permanently installed Valorlox cofferdam around the ILS equipment pad means that when a storm approaches, the barrier is deployed remotely — without groundside personnel entering an active airfield, without cranes, and without a 48-hour mobilization window.",
+      "The Valorlox system can be installed around individual homes, apartment complexes, or residential blocks to provide rapid, invisible flood protection. When deployed, it safeguards family homes and possessions. When not in use, it functions as a seamless part of the landscape.",
     highlights: [
-      "No airfield access required for deployment",
-      "Protects critical navigation and communications equipment",
-      "Compatible with FAA and DoT infrastructure standards",
-      "Case-study basis: New Orleans Airport ILS vulnerability analysis",
+      "Protects homes without altering property aesthetics",
+      "Rapid deployment protects families before storm surge arrival",
+      "Modular design suits individual homes or multi-unit buildings",
+      "Reduces flood insurance premiums through proven protection",
     ],
+    image: "/prototype-photo-1.jpeg",
+    imageAlt: "Valorlox barrier protecting residential area",
   },
   {
     icon: Zap,
@@ -54,6 +59,8 @@ const cases = [
       "50-year design life aligns with infrastructure investment cycles",
       "Suitable for FEMA Hazard Mitigation Grant Program funding",
     ],
+    image: "/prototype-photo-4.jpeg",
+    imageAlt: "Valorlox protecting critical infrastructure",
   },
   {
     icon: Waves,
@@ -69,6 +76,8 @@ const cases = [
       "Walkable surface — no loss of public access when not deployed",
       "Eligible for CDBG-DR, HMGP, and resilience bond financing",
     ],
+    image: "/prototype-photo-3.jpeg",
+    imageAlt: "Valorlox protecting coastal community infrastructure",
   },
 ];
 
@@ -98,8 +107,22 @@ export default function UseCasesPage() {
         <SectionReveal key={i}>
           <section className={i % 2 === 0 ? "bg-white" : "bg-brand-cream"}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-                <div>
+              <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${i % 2 === 1 ? "lg:flex-row-reverse" : ""}`}>
+                {/* Image */}
+                <div className={i % 2 === 1 ? "lg:order-2" : ""}>
+                  <div className="relative h-96 rounded-2xl overflow-hidden shadow-lg">
+                    <Image
+                      src={c.image}
+                      alt={c.imageAlt}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className={i % 2 === 1 ? "lg:order-1" : ""}>
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-9 h-9 bg-brand-green/10 rounded-lg flex items-center justify-center">
                       <c.icon size={18} className="text-brand-green" />
@@ -111,7 +134,7 @@ export default function UseCasesPage() {
                   <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-dark mb-5 leading-tight tracking-tight">
                     {c.title}
                   </h2>
-                  <div className="space-y-4 text-brand-slate text-base leading-relaxed">
+                  <div className="space-y-4 text-brand-slate text-base leading-relaxed mb-6">
                     <div>
                       <p className="font-semibold text-brand-dark text-sm uppercase tracking-wider mb-2">
                         The Problem
@@ -125,22 +148,22 @@ export default function UseCasesPage() {
                       <p>{c.solution}</p>
                     </div>
                   </div>
-                </div>
-                <div className="bg-brand-dark rounded-2xl p-8 text-white">
-                  <p className="text-brand-light-green text-xs font-bold uppercase tracking-widest mb-5">
-                    Key Points
-                  </p>
-                  <ul className="space-y-4">
-                    {c.highlights.map((h, j) => (
-                      <li key={j} className="flex items-start gap-3 text-sm leading-relaxed">
-                        <ChevronRight
-                          size={16}
-                          className="text-brand-light-green mt-0.5 shrink-0"
-                        />
-                        <span className="text-white/80">{h}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="bg-brand-dark rounded-2xl p-8 text-white">
+                    <p className="text-brand-light-green text-xs font-bold uppercase tracking-widest mb-5">
+                      Key Points
+                    </p>
+                    <ul className="space-y-4">
+                      {c.highlights.map((h, j) => (
+                        <li key={j} className="flex items-start gap-3 text-sm leading-relaxed">
+                          <ChevronRight
+                            size={16}
+                            className="text-brand-light-green mt-0.5 shrink-0"
+                          />
+                          <span className="text-white/80">{h}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>

@@ -11,9 +11,9 @@ export default function Footer() {
             <Image
               src="/valorlox-logo.png"
               alt="Valorlox"
-              width={40}
-              height={40}
-              className="h-10 w-auto mb-3"
+              width={60}
+              height={60}
+              className="h-16 w-auto mb-3"
             />
             <p className="text-sm leading-relaxed">
               Intelligent flood protection systems. Patented technology,

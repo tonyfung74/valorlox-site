@@ -22,9 +22,9 @@ export default function Navbar() {
           <Image
             src="/valorlox-logo.png"
             alt="Valorlox"
-            width={32}
-            height={32}
-            className="h-8 w-auto"
+            width={48}
+            height={48}
+            className="h-12 w-auto"
           />
         </Link>
 
