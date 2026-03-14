@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Shield, Layers, Wind, ChevronRight, FileText } from "lucide-react";
 import CTASection from "@/components/CTASection";
 import SectionReveal from "@/components/SectionReveal";
@@ -98,11 +99,21 @@ export default function TechnologyPage() {
         <section className="bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-brand-dark text-white rounded-2xl p-8">
-                <div className="text-brand-light-green text-xs font-bold uppercase tracking-widest mb-4">
-                  Deployed State
+              <div>
+                <div className="bg-brand-dark text-white rounded-2xl overflow-hidden mb-4 aspect-video">
+                  <Image
+                    src="/prototype-photo-1.jpeg"
+                    alt="Valorlox pneumatic cofferdam deployed"
+                    width={500}
+                    height={330}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <h3 className="text-2xl font-bold mb-3">Flood barrier active</h3>
+                <div className="bg-brand-dark text-white rounded-2xl p-8">
+                  <div className="text-brand-light-green text-xs font-bold uppercase tracking-widest mb-4">
+                    Deployed State
+                  </div>
+                  <h3 className="text-2xl font-bold mb-3">Flood barrier active</h3>
                 <p className="text-white/70 text-sm leading-relaxed mb-6">
                   Hypalon airbags inflate and press against the adjacent
                   structure. The watertight seal prevents storm surge and
@@ -122,14 +133,25 @@ export default function TechnologyPage() {
                     Available 24/7, operator-controlled
                   </li>
                 </ul>
-              </div>
-              <div className="bg-brand-cream rounded-2xl p-8">
-                <div className="text-brand-green text-xs font-bold uppercase tracking-widest mb-4">
-                  Passive State
                 </div>
-                <h3 className="text-2xl font-bold text-brand-dark mb-3">
-                  Walkable public space
-                </h3>
+              </div>
+              <div>
+                <div className="bg-brand-cream rounded-2xl overflow-hidden mb-4 aspect-video">
+                  <Image
+                    src="/prototype-photo-3.jpeg"
+                    alt="Valorlox system in passive state as walkway"
+                    width={500}
+                    height={330}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="bg-brand-cream rounded-2xl p-8">
+                  <div className="text-brand-green text-xs font-bold uppercase tracking-widest mb-4">
+                    Passive State
+                  </div>
+                  <h3 className="text-2xl font-bold text-brand-dark mb-3">
+                    Walkable public space
+                  </h3>
                 <p className="text-brand-slate text-sm leading-relaxed mb-6">
                   When not deployed, the Ipe wood deck sits flush with the
                   surrounding walkway. Pedestrians, cyclists, and vehicles
@@ -149,6 +171,7 @@ export default function TechnologyPage() {
                     Brazilian Ipe wood — durable and attractive
                   </li>
                 </ul>
+                </div>
               </div>
             </div>
           </div>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
@@ -17,10 +18,14 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 bg-brand-dark border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <span className="text-white text-xl font-bold tracking-tight">
-            Valor<span className="text-brand-light-green">lox</span>
-          </span>
+        <Link href="/" className="flex items-center gap-2 shrink-0">
+          <Image
+            src="/valorlox-logo.png"
+            alt="Valorlox"
+            width={32}
+            height={32}
+            className="h-8 w-auto"
+          />
         </Link>
 
         {/* Desktop nav */}

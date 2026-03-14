@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -7,9 +8,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
-            <div className="text-white text-xl font-bold tracking-tight mb-3">
-              Valor<span className="text-brand-light-green">lox</span>
-            </div>
+            <Image
+              src="/valorlox-logo.png"
+              alt="Valorlox"
+              width={40}
+              height={40}
+              className="h-10 w-auto mb-3"
+            />
             <p className="text-sm leading-relaxed">
               Intelligent flood protection systems. Patented technology,
               permanently installed, invisible until needed.

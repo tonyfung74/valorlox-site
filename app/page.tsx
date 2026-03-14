@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Waves, Timer, Building, Plane, Zap, Eye, Anchor } from "lucide-react";
 import HeroSection from "@/components/HeroSection";
 import StatBar from "@/components/StatBar";
@@ -102,16 +103,14 @@ export default function HomePage() {
                   </p>
                 </div>
               </div>
-              <div className="bg-brand-cream rounded-2xl overflow-hidden aspect-[4/3] flex items-center justify-center">
-                <div className="text-center p-8">
-                  <Waves size={48} className="text-brand-water mx-auto mb-4" />
-                  <p className="text-brand-slate text-sm font-medium">
-                    Prototype photo — waterfront deployment
-                  </p>
-                  <p className="text-gray-400 text-xs mt-1">
-                    Add /public/prototype-photo-2.jpeg
-                  </p>
-                </div>
+              <div className="bg-brand-cream rounded-2xl overflow-hidden aspect-[4/3]">
+                <Image
+                  src="/prototype-photo-2.jpeg"
+                  alt="Valorlox prototype deployed at waterfront"
+                  width={600}
+                  height={450}
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
