@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Waves, Timer, Building, Plane, Zap, Eye, Anchor } from "lucide-react";
+import { Timer, Building, Plane, Zap, Eye, Anchor } from "lucide-react";
 import HeroSection from "@/components/HeroSection";
 import StatBar from "@/components/StatBar";
 import FeatureCard from "@/components/FeatureCard";

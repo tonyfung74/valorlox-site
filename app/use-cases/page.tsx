@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Building, Plane, Zap, Waves, ChevronRight } from "lucide-react";
+import { Building, Zap, Waves, ChevronRight } from "lucide-react";
 import CTASection from "@/components/CTASection";
 import SectionReveal from "@/components/SectionReveal";
 
